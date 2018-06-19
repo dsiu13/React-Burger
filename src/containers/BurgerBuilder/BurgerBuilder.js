@@ -12,15 +12,17 @@ const INGREDIENT_PRICES = {
   tomato: 0.25
 };
 
+const TAX = 1.0825;
+
 class BurgerBuilder extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
       ingredients: {
+        bacon: 0,
         tomato: 0,
         onion: 0,
-        bacon: 0,
         lettuce: 0,
         cheese: 0,
         meat: 0
@@ -39,7 +41,7 @@ class BurgerBuilder extends Component {
     updatedIngredients[type] = updatedCount;
     const priceAddition = INGREDIENT_PRICES[type];
     const oldPrice = this.state.totalPrice;
-    const newPrice = oldPrice + priceAddition
+    const newPrice = oldPrice + priceAddition * TAX
     this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
   };
 
@@ -56,7 +58,7 @@ class BurgerBuilder extends Component {
     updatedIngredients[type] = updatedCount;
     const priceSubtraction = INGREDIENT_PRICES[type];
     const oldPrice = this.state.totalPrice;
-    const newPrice = oldPrice - priceSubtraction
+    const newPrice = oldPrice - priceSubtraction * TAX
     this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
   };
 
@@ -74,6 +76,7 @@ class BurgerBuilder extends Component {
           ingredientsAdded={this.addIngredientHandler}
           ingredientsRemoved={this.removeIngredientHandler}
           disabled={disabledInfo}
+          price={this.state.totalPrice}
         />
       </Aux>
     );
