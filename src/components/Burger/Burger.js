@@ -3,14 +3,17 @@ import BurgerIngredients from './BurgerIngredients/BurgerIngredients';
 import classes from './Burger.css';
 
 const burger = (props) => {
-  let transformedIngredients = Object.keys(props.ingredients).map(igKey => {
+  let transformedIngredients = Object.keys(props.ingredients)
+  .map(igKey => {
     return [...Array(props.ingredients[igKey])].map((_, i) => {
       return <BurgerIngredients key={igKey + i} type={igKey} />
-    })
-  }).reduce((arr, el) => {
-    return arr.concat(el)
-  }, []);
+    });
+  })
+  .reduce((arr, el) => {
+      return arr.concat(el)
+  }, [ ]);
 
+// doesn't work, not sure why.
 if(transformedIngredients === 0) {
   transformedIngredients = <p>Please start adding ingredients!</p>
 }
