@@ -8,12 +8,12 @@ class BurgerBuilder extends Component {
     super(props)
     this.state = {
       ingredients: {
-        tomato: 1,
-        onion: 1,
-        bacon: 1,
-        lettuce: 1,
-        cheese: 2,
-        meat: 2,
+        tomato: 0,
+        onion: 0,
+        bacon: 0,
+        lettuce: 0,
+        cheese: 0,
+        meat: 0
       }
     };
   }
