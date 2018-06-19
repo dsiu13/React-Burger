@@ -82,7 +82,7 @@
 
 
 .Meat {
-    width: 80%;
+    width: 83%;
     height: 8%;
     background: linear-gradient(#7f3608, #702e05);
     margin: 2% auto;
@@ -90,7 +90,7 @@
 }
 
 .Cheese {
-    width: 90%;
+    width: 85%;
     height: 4.5%;
     margin: 2% auto;
     background: linear-gradient(#f4d004, #d6bb22);
@@ -114,14 +114,16 @@
 
 .Onion {
   width: 70%;
-  height: 2%;
+  height: 4%;
   background: linear-gradient(#e4a9e7, #edc1f0);
   margin: 2% auto;
+  border-radius: 20px;
 }
 
 .Tomato {
-  width: 60%;
-  height: 2%;
+  width: 65%;
+  height: 4%;
   background: linear-gradient(#ee1e1e, #ff0000);
   margin: 2% auto;
+  border-radius: 20px;
 }
