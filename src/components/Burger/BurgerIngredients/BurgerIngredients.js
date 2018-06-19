@@ -20,16 +20,16 @@ class BurgerIngredients extends Component {
             </div>
           );
           break;
-        case ( 'meat' ):
+        case ('meat'):
           ingredients = <div className={ classes.Meat }></div>;
           break;
-        case ( 'cheese' ):
+        case ('cheese'):
           ingredients = <div className={ classes.Cheese }></div>;
           break;
-        case ( 'bacon' ):
+        case ('bacon'):
           ingredients = <div className={ classes.Bacon }></div>;
           break;
-        case ( 'lettuce' ):
+        case ('lettuce'):
           ingredients = <div className={ classes.Lettuce }></div>;
           break;
         default:
@@ -38,7 +38,7 @@ class BurgerIngredients extends Component {
         return ingredients;
   }; // Render End
 
-}
+} // Component End
 
 BurgerIngredients.propTypes = {
     type: PropTypes.string.isRequired
