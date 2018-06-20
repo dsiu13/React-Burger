@@ -16,11 +16,6 @@ const burger = (props) => {
       transformedIngredients = <p>Please start adding ingredients!</p>;
   }
 
-// doesn't work, not sure why.
-if(transformedIngredients === 0) {
-  transformedIngredients = <p>Please start adding ingredients!</p>
-}
-
   return (
     <div className={classes.Burger}>
       <BurgerIngredients type="bread-top" />

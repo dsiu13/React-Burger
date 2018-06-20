@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Aux from '../../hoc/Aux';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
+import Modal from '../../components/UI/Modal/Modal';
+import orderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 
 const INGREDIENT_PRICES = {
   lettuce: 0.25,
@@ -78,21 +80,22 @@ class BurgerBuilder extends Component {
 
   render (){
     const disabledInfo = {
-      ...this.state.ingredients
+        ...this.state.ingredients
     };
     for (let key in disabledInfo) {
-      disabledInfo[key] = disabledInfo[key] <= 0
+        disabledInfo[key] = disabledInfo[key] <= 0
     }
+
     return (
       <Aux>
-        <div><Burger ingredients={this.state.ingredients}/></div>
+        <Modal> <orderSummary ingredients={this.state.ingredients} /> </Modal>
+        <Burger ingredients={this.state.ingredients}/>
         <BuildControls
           ingredientsAdded={this.addIngredientHandler}
           ingredientsRemoved={this.removeIngredientHandler}
           disabled={disabledInfo}
           price={this.state.totalPrice}
-          purchase={this.buyable}
-        />
+          purchase={this.state.buyable} />
       </Aux>
     );
   }
