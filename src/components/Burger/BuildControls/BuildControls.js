@@ -25,7 +25,8 @@ const buildControls = (props) => (
     ))}
     <button
         className={classes.OrderButton}
-        disabled={props.buyable}>Order Now</button>
+        disabled={props.buyable}
+        onClick={props.ordered}>Order Now</button>
   </div>
 );
 
