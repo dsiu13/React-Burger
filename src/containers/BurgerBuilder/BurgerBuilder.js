@@ -80,11 +80,11 @@ class BurgerBuilder extends Component {
   };
 
   buyHandler = () => {
-      this.setState({buyable: true});
+      this.setState({buying: true});
   }
 
   buyCancelHandler = () => {
-      this.setState({buyable: false});
+      this.setState({buying: false});
   }
 
   render (){
