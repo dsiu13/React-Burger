@@ -89,6 +89,7 @@ class BurgerBuilder extends Component {
 
   continueHandler = () => {
     alert('Checking Out')
+
   }
 
   render (){

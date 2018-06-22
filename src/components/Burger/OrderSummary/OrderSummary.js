@@ -22,8 +22,8 @@ class OrderSummary extends Component {
               {ingredientSummary}
           </ul>
           <p>Continue to Checkout?</p>
-          <Button btnType="Danger" clicked={this.props.buyCancelHandler}>Cancel?</Button>
-          <Button btnType="Success" clicked={this.props.continueHandler}>Continue?</Button>
+          <Button btnType="Danger" clicked={this.props.cancelBuy}>Cancel?</Button>
+          <Button btnType="Success" clicked={this.props.continueBuy}>Continue?</Button>
         </Aux>
       )
   }
