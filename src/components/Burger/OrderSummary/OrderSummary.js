@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Aux from '../../../hoc/Aux';
+import Button from '../../UI/Button/Button';
 
 class OrderSummary extends Component {
-  componentWillUpdate() {
-    console.log('[OrderSummary] WillUpdate');
-  }
+
   render() {
     const ingredientSummary = Object.keys(this.props.ingredients)
       .map(igKey => {
@@ -23,6 +22,8 @@ class OrderSummary extends Component {
               {ingredientSummary}
           </ul>
           <p>Continue to Checkout?</p>
+          <Button btnType="Danger" clicked={this.props.buyCancelHandler}>Cancel?</Button>
+          <Button btnType="Success" clicked={this.props.continueHandler}>Continue?</Button>
         </Aux>
       )
   }
